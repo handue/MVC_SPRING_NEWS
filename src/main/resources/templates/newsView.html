@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Bundle with Popper (includes Bootstrap's JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>뉴스 관리 앱</title>
+</head>
+<body>
+<div class="container w-75 mt-5 mx-auto">
+    <h2 th:text="${news.title}">뉴스 제목</h2>
+    <hr>
+    <div class="card w-75 mx-auto">
+        <img class="card-img-top" th:src="@{'/images/' + ${news.img}}" alt="뉴스 이미지">
+        <div class="card-body">
+            <h4 class="card-title" th:text="'Date: ' + ${news.date}">Date</h4>
+            <p class="card-text" th:text="'Content: ' + ${news.content}">Content</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
